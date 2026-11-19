@@ -16,4 +16,4 @@ Other files:
 - `screenshot.mjs` takes the screenshots the modules use. It needs Node.js 22, Chrome and `cwebp`. Usage is in its header.
 - `color-calc/` holds the scripts that computed the contrast ratios, colors and measurements printed in the modules. Run `npm install` in that folder before running them.
 
-Third-party files keep their own licenses: the Inter font (SIL Open Font License, `fonts/OFL.txt`) and the Lucide icons (ISC, `icons/LICENSE`).
+The code in this repository is under the MIT License (`LICENSE`). Third-party files keep their own licenses: the Inter font (SIL Open Font License, `fonts/OFL.txt`) and the Lucide icons (ISC, `icons/LICENSE`).
