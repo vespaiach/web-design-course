@@ -1,0 +1,81 @@
+.hero h1 {
+  font-size: var(--size-title);
+}
+
+.hero img {
+  width: 100%;
+  height: auto;             /* the photo's own 3:2 shape, from its width and height attributes */
+  max-block-size: 20rem;    /* never taller than 320px, so a wide screen gets a band */
+  object-fit: cover;        /* fill the box and crop what does not fit; never squeeze */
+  object-position: 50% 63%; /* keep the laptop and the drive inside the band */
+}
+
+/* In the dark theme, dim the photo so no part of it is brighter than the text */
+@media (prefers-color-scheme: dark) {
+  .hero img {
+    filter: brightness(0.8);
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-inside);
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.hero .muted,
+.quote {
+  max-inline-size: var(--measure);
+}
+
+section + section {
+  margin-top: var(--space-between);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: var(--space-5);
+}
+
+/* Each card spans three rows of .features (icon, title, text), so all cards share them */
+.feature {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  justify-items: start;
+  gap: var(--space-2); /* a subgrid inherits the parent's gaps unless it sets its own */
+  border: 1px solid var(--color-border);
+  padding: var(--space-4);
+}
+
+.feature h3,
+.feature p {
+  margin: 0;
+}
+
+.feature svg {
+  inline-size: var(--icon-size);
+  block-size: var(--icon-size);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-between);
+  font-weight: bold;
+  font-size: var(--step-1);
+}
+
+.quote {
+  font-style: italic;
+}

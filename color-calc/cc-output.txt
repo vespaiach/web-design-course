@@ -1,0 +1,8 @@
+contrast-color(#3ea6ff) in Chrome 157 -> #000000
+contrast-color(#2277d3) in Chrome 157 -> #000000
+contrast-color(#767676) in Chrome 157 -> #000000
+contrast-color(#0078cd) in Chrome 157 -> #ffffff
+contrast-color(#ff0000) in Chrome 157 -> #000000
+contrast-color(#777777) in Chrome 157 -> #000000
+light #005fa5 #0077cc #e4effa #121212
+dark #005fa5 #0077cc #e4effa #121212

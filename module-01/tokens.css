@@ -1,0 +1,7 @@
+/* Design tokens: named values that the other CSS files use. */
+:root {
+  --space-inside: 16px;  /* between items of one group */
+  --size-title: 40px;    /* the one largest text on a page */
+  --color-muted: #555;   /* secondary text: 7.46:1 on white */
+  --space-between: 48px; /* between groups: three times the space inside */
+}

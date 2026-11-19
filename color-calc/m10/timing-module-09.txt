@@ -1,0 +1,14 @@
+0 page loaded                                              name:inv email:inv username:inv password:inv plan:ok terms:inv  focus=
+1 click Full name                                          name:inv email:inv username:inv password:inv plan:ok terms:inv  focus=name
+2 Tab without typing (to Email)                            name:inv email:inv username:inv password:inv plan:ok terms:inv  focus=email
+3 type "dana" in Email, still focused                      name:inv email:inv[dana] username:inv password:inv plan:ok terms:inv  focus=email
+4 Tab out of Email                                         name:inv email:UI[dana] username:inv password:inv plan:ok terms:inv  focus=username
+5 Shift+Tab back into Email                                name:inv email:UI[dana] username:inv password:inv plan:ok terms:inv  focus=email
+6 type "@example.co" (valid now), still focused            name:inv email:ok[dana@example.co] username:inv password:inv plan:ok terms:inv  focus=email
+7 type "Dana" in Username, Tab                             name:inv email:ok[dana@example.co] username:ok[Dana] password:inv plan:ok terms:inv  focus=password
+8 click the checkbox (checked)                             name:inv email:ok[dana@example.co] username:ok[Dana] password:inv plan:ok terms:ok  focus=terms
+9 click it again (unchecked)                               name:inv email:ok[dana@example.co] username:ok[Dana] password:inv plan:ok terms:UI  focus=terms
+10 type "short" in Password, still focused                 name:inv email:ok[dana@example.co] username:ok[Dana] password:inv[short] plan:ok terms:UI  focus=password
+11 type 7 more characters (12 now), still focused          name:inv email:ok[dana@example.co] username:ok[Dana] password:ok[shortenough1] plan:ok terms:UI  focus=password
+12 click Create account                                    name:UI email:ok[dana@example.co] username:ok[Dana] password:ok[shortenough1] plan:ok terms:UI  focus=name
+url still signup.html

@@ -1,0 +1,52 @@
+.signup-form {
+  max-inline-size: var(--measure);
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+}
+
+/* Each label above its field, and more space between fields than inside one */
+.signup-form .row {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-inside);
+}
+
+/* A username has at most 20 characters, so its field is 20 characters wide */
+.signup-form [name="username"] {
+  max-inline-size: 20ch;
+}
+
+.signup-form .checkbox-row {
+  display: flex;
+  align-items: start; /* the box stays beside the first line of its label */
+  gap: var(--space-2);
+}
+
+/* A hint states a field's rule before anyone breaks it */
+.signup-form .hint {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* Errors. Each message waits inside its field's label and shows once the browser
+   flags the field: after someone changes it and leaves, or tries to submit */
+.signup-form .field-error {
+  display: none;
+  font-weight: 600;
+  color: var(--color-danger);
+}
+
+.signup-form .row:has(:user-invalid) .field-error {
+  display: block;
+}
+
+/* The message repeats the rule, so the hint steps aside */
+.signup-form .row:has(:user-invalid) .hint {
+  display: none;
+}
+
+.signup-form :user-invalid {
+  border-color: var(--color-danger);
+}

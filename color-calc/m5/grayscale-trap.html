@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Module 5 figure: three ways to remove color</title>
+<style>
+  body { margin: 0; padding: 16px; font: 15px/1.4 Arial, sans-serif; color: #000; background: #fff; width: 768px; box-sizing: border-box; }
+  .row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .row p { width: 260px; margin: 0; }
+  code { font: 14px Menlo, monospace; }
+  .swatch { width: 140px; height: 48px; }
+  .filter .swatch { filter: grayscale(1); }
+  .red { background: #d32f2f; }
+  .green { background: #388e3c; }
+  .honest .red { background: oklch(from #d32f2f l 0 h); }
+  .honest .green { background: oklch(from #388e3c l 0 h); }
+</style>
+<div class="row"><p>Color: <code>#d32f2f</code>, <code>#388e3c</code></p><div class="swatch red"></div><div class="swatch green"></div></div>
+<div class="row filter"><p><code>filter: grayscale(1)</code></p><div class="swatch red"></div><div class="swatch green"></div></div>
+<div class="row honest"><p><code>oklch(from … l 0 h)</code></p><div class="swatch red"></div><div class="swatch green"></div></div>

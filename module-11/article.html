@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Stashling stores each piece of a file only once - Stashling blog</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <script src="menu.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Stashling</a>
+    <button class="menu-button" type="button" hidden>Menu</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="article.html" aria-current="page">Blog</a>
+      <a href="index.html#download">Download</a>
+      <a class="nav-account" href="signup.html">Sign up</a>
+    </nav>
+    <a class="settings-link" href="settings.html">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+      Settings
+    </a>
+  </header>
+
+  <main class="content">
+    <article>
+      <h1>How Stashling Stores Each Piece of a File Only Once</h1>
+      <p>November 12, 2026 - by the Stashling maintainers - 6 min read</p>
+
+      <p>People often ask us how a year of daily backups of a 40 GB home folder can fit in less than 60 GB of storage. The short answer is deduplication: Stashling never stores the same piece of data twice. The longer answer is in this post, and it explains a change we made in version 2.4 that makes backups of large files much smaller.</p>
+
+      <h2>Files are split into chunks</h2>
+      <p>When Stashling reads a file, it does not save the file as one block. It cuts the file into chunks of about 1 MB and computes a hash of each chunk. The hash works like a fingerprint: two chunks with the same content always have the same hash. Before it uploads a chunk, Stashling checks its index. If the hash is already there, the chunk is already in your repository, and Stashling only writes a short note that says "this file uses that chunk".</p>
+      <p>This is why the second backup is so fast. Most of your files did not change since yesterday, so every one of their chunks is already stored. Stashling reads them, hashes them, finds them in the index and moves on. You can see the numbers for each run on the <a href="settings.html">settings page</a>, in the snapshot table.</p>
+
+      <h2>Why fixed-size chunks were not enough</h2>
+      <p>Until version 2.3, the chunks had a fixed size. The first chunk was bytes 0 to 1,048,575, the second chunk started right after it, and so on. That works well when a program changes a file in place. It works badly when a program inserts data near the start of a file.</p>
+      <p>Think of a large text file, a mailbox file or a virtual machine disk. If you add one line at the top, every byte after it moves down. Every fixed-size chunk now has different content, so every hash is new, and Stashling uploads the whole file again. One added line can cost you 4 GB of storage.</p>
+
+      <h2>Chunks that follow the content</h2>
+      <p>Version 2.4 uses content-defined chunking. Instead of cutting at fixed positions, Stashling slides a small window over the data and computes a rolling hash of the last 64 bytes. When the rolling hash matches a pattern, it cuts there. The pattern is chosen so that a cut happens about once every megabyte on average, with a minimum of 512 KB and a maximum of 8 MB.</p>
+      <p>Because the cut points depend on the content and not on the position, an insertion only changes the chunk where it happens. The bytes after it move, but the cut points move with them, and every following chunk keeps its hash. In our tests, adding one line to the top of a 4 GB mailbox file now uploads 1.3 MB instead of 4 GB.</p>
+      <pre>$ stashling backup ~/Mail
+scanning 1 file, 4.02 GB
+new chunks:      2 (1.3 MB)
+reused chunks: 4,117 (4.02 GB)
+snapshot 9be04d7 saved in 41s</pre>
+
+      <h2>What you need to do</h2>
+      <p>Nothing, for new repositories. For a repository made with an older version, the new chunker starts with the next backup. The first backup after the upgrade will be larger than usual, because the old chunks and the new chunks do not match. After that, your backups shrink again. Old snapshots stay readable, and you can restore any of them as before.</p>
+      <p>If you want to keep the old behavior, for example because your storage charges per upload, set <code>chunker = "fixed"</code> in your config file. The <a href="index.html#download">download page</a> has the full upgrade notes.</p>
+
+      <h2>Thanks</h2>
+      <p>The new chunker was written by three first-time contributors over two months, with many rounds of review and a lot of test data from people on the forum. Thank you all. If you want to help with the next release, <a href="signup.html">create an account</a> and say hello.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Stashling is free software under the MIT license. Built by volunteers since 2021.</p>
+  </footer>
+</body>
+</html>

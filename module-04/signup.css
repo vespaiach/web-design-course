@@ -1,0 +1,35 @@
+.signup-form {
+  width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #000;
+}
+
+.signup-form .row {
+  margin-bottom: 10px;
+}
+
+.signup-form label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"],
+.signup-form select {
+  width: 380px;
+  padding: 5px;
+  font-size: var(--step-0);
+}
+
+.signup-form .checkbox-row label {
+  width: auto;
+  text-align: left;
+}
+
+.signup-form .actions {
+  text-align: right;
+}

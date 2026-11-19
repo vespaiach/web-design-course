@@ -1,0 +1,2 @@
+light: --color-on-bar #ffffff on --color-bar #222222 15.91:1
+dark:  --color-on-bar #e8e8e8 on --color-bar #333333 10.31:1

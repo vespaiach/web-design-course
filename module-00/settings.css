@@ -1,0 +1,56 @@
+.settings h1 {
+  margin: 10px;
+}
+
+.settings h2 {
+  margin: 10px;
+}
+
+.settings p {
+  margin: 10px;
+}
+
+.settings label {
+  display: block;
+  margin: 10px;
+}
+
+.settings input,
+.settings select {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.settings .button {
+  margin: 10px;
+}
+
+.settings table {
+  margin: 10px;
+  border-collapse: collapse;
+}
+
+.settings th,
+.settings td {
+  border: 1px solid #000;
+  padding: 5px;
+}
+
+/* same saturation and lightness so the three colors match */
+.status {
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 14px;
+}
+
+.status-ok {
+  background: hsl(120, 100%, 35%);
+}
+
+.status-running {
+  background: hsl(60, 100%, 35%);
+}
+
+.status-failed {
+  background: hsl(0, 100%, 35%);
+}

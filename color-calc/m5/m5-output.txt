@@ -1,0 +1,64 @@
+## A. Status labels before (computed values as Chrome 157 reports them)
+hsl(120, 100%, 35%)  #00b300 oklch(0.664 0.226 142.5) Y=0.3224 white 2.82:1 black 7.45:1  filter #808080 luminance #9a9a9a oklch #939393
+hsl(60, 100%, 35%)   #b3b300 oklch(0.742 0.162 109.8) Y=0.4182 white 2.24:1 black 9.36:1  filter #a6a6a6 luminance #adadad oklch #ababab
+hsl(0, 100%, 35%)    #b30000 oklch(0.481 0.198 29.2) Y=0.0958 white 7.20:1 black 2.92:1  filter #262626 luminance #575757 oklch #5e5e5e
+
+## B. Largest chroma inside sRGB, by OKLCH lightness, for hues 30, 85, 145
+L 0.45  0.180  0.092  0.142  smallest 0.092  gray #555555 white 7.46:1 black 2.82:1
+L 0.50  0.201  0.102  0.157  smallest 0.102  gray #636363 white 6.01:1 black 3.50:1
+L 0.55  0.221  0.113  0.173  smallest 0.113  gray #717171 white 4.88:1 black 4.30:1
+L 0.60  0.241  0.123  0.189  smallest 0.123  gray #808080 white 3.95:1 black 5.32:1
+L 0.65  0.236  0.133  0.204  smallest 0.133  gray #8f8f8f white 3.23:1 black 6.49:1
+L 0.70  0.192  0.143  0.220  smallest 0.143  gray #9e9e9e white 2.68:1 black 7.84:1
+L 0.75  0.151  0.154  0.236  smallest 0.151  gray #aeaeae white 2.22:1 black 9.47:1
+L 0.80  0.115  0.164  0.252  smallest 0.115  gray #bebebe white 1.86:1 black 11.30:1
+L 0.85  0.082  0.166  0.267  smallest 0.082  gray #cecece white 1.57:1 black 13.34:1
+L 0.90  0.052  0.108  0.195  smallest 0.052  gray #dedede white 1.35:1 black 15.61:1
+L 0.95  0.025  0.053  0.089  smallest 0.025  gray #eeeeee white 1.16:1 black 18.10:1
+
+## C. Status labels after: oklch(0.75 0.14 H)
+oklch(0.75 0.14 145) in sRGB true #71c575 Y=0.4473 black 9.95:1 white 2.11:1  filter #adadad luminance #b2b2b2 oklch #aeaeae
+oklch(0.75 0.14 85)  in sRGB true #d6a62e Y=0.4177 black 9.35:1 white 2.25:1  filter #a8a8a8 luminance #adadad oklch #aeaeae
+oklch(0.75 0.14 30)  in sRGB true #fa8978 Y=0.3957 black 8.91:1 white 2.36:1  filter #a0a0a0 luminance #a9a9a9 oklch #aeaeae
+HSL of the old yellow's OKLCH hue at L 0.75: oklch(0.75 0.14 110) -> #b4b53d
+
+## D. Eleven grays: equal steps of the sRGB number, of light, of OKLCH L
+number  #000000 #1a1a1a #333333 #4d4d4d #666666 #808080 #999999 #b3b3b3 #cccccc #e6e6e6 #ffffff
+light   #000000 #595959 #7c7c7c #959595 #aaaaaa #bcbcbc #cbcbcb #dadada #e7e7e7 #f3f3f3 #ffffff
+oklch L #000000 #030303 #161616 #2e2e2e #484848 #636363 #808080 #9e9e9e #bebebe #dedede #ffffff
+#808080: number 0.5020 light 0.2159 OKLCH L 0.600; half the light = 0.7354 = 188 = #bcbcbc; OKLCH L 0.5 = #636363
+
+## E. Six hues: hsl(H 100% 50%) and oklch(0.7 0.12 H), each with its OKLCH gray
+hsl   0 #ff0000 L 0.628 gray #888888   oklch(0.7 0.12 0) #da7d9b in sRGB true gray #9e9e9e
+hsl  60 #ffff00 L 0.968 gray #f4f4f4   oklch(0.7 0.12 60) #d58b4b in sRGB true gray #9e9e9e
+hsl 120 #00ff00 L 0.866 gray #d3d3d3   oklch(0.7 0.12 120) #95a94e in sRGB true gray #9e9e9e
+hsl 180 #00ffff L 0.905 gray #e0e0e0   oklch(0.7 0.12 180) #24b6a1 in sRGB true gray #9e9e9e
+hsl 240 #0000ff L 0.452 gray #565656   oklch(0.7 0.12 240) #4fa8e1 in sRGB true gray #9f9f9f
+hsl 300 #ff00ff L 0.702 gray #9f9f9f   oklch(0.7 0.12 300) #aa8dde in sRGB true gray #9f9f9f
+
+## F. Critique: chart lines #e53935 (errors) and #43a047 (successes)
+#e53935 hsl(1.36 77.2% 55.3%) oklch(0.608 0.209 27.0) filter #5d5d5d luminance #7b7b7b oklch #828282 on white 4.23:1
+#43a047 hsl(123 41% 44.5%) oklch(0.629 0.154 144.2) filter #868686 luminance #8d8d8d oklch #898989 on white 3.30:1
+between them: 1.28:1
+darker error line oklch(0.45 0.18 29) in sRGB true #a20906 vs #43a047 2.47:1 on white 8.15:1
+darker error line oklch(0.5 0.18 29) in sRGB true #b3241b vs #43a047 2.00:1 on white 6.59:1
+
+## G. Gamut triangles (chromaticity of each space's primaries, from colorjs.io)
+srgb       0.640,0.330  0.300,0.600  0.150,0.060
+display-p3 0.680,0.320  0.265,0.690  0.150,0.060
+rec2020    0.708,0.292  0.170,0.797  0.131,0.046
+display-p3 / srgb area: xy 1.357  u'v' 1.256
+rec2020 / srgb area: xy 1.891  u'v' 1.723
+
+## H. Gamut mapping example oklch(0.7 0.3 150)
+in sRGB false in P3 false; clip #00cb00 oklch(0.730 0.248 142.5); CSS map #00c248 oklch(0.709 0.210 147.1)
+
+## I. Blue + yellow, halfway, in three spaces (Chrome 157 drew #80807f, #6cabc7 and #00cfbd)
+srgb  oklch(0.598 0.000 0.000) in sRGB true; clipped #808080; CSS-mapped #808080
+oklab oklch(0.710 0.077 227.412) in sRGB true; clipped #6cabc7; CSS-mapped #6cabc7
+oklch oklch(0.710 0.262 186.911) in sRGB false; clipped #00cfbd; CSS-mapped #00bdb0
+
+## J. A green for sRGB and a richer one for P3 screens, at L 0.7, hue 145
+oklch(0.7 0.19 145) in sRGB true in P3 true sRGB hex #3bbc4a
+oklch(0.7 0.25 145) in sRGB false in P3 true sRGB hex -
+largest chroma at L 0.7, hue 145: sRGB 0.220

@@ -1,0 +1,41 @@
+## A. Light theme candidate pairs
+black on accent-600                #000000 on #0078cd: WCAG 4.57:1  APCA Lc 32.9
+white on accent-600                #ffffff on #0078cd: WCAG 4.60:1  APCA Lc -76.7
+accent-600 link on white           #0078cd on #ffffff: WCAG 4.60:1  APCA Lc 71.2
+accent-700 link on white           #005fb2 on #ffffff: WCAG 6.40:1  APCA Lc 81.1
+brand as link on white             #3ea6ff on #ffffff: WCAG 2.59:1  APCA Lc 50.2
+hover = color-mix(in oklab, #0078cd, black 15%) -> #005fa5 oklch(0.478 0.135 249.9)
+white on hover                     #ffffff on #005fa5: WCAG 6.60:1  APCA Lc -87.1
+oklch(from #3ea6ff calc(l - 0.15) c h) -> #0077cc oklch(0.560 0.158 249.8)
+white on relative-darkened brand   #ffffff on #0077cc: WCAG 4.66:1  APCA Lc -77.1
+color-mix(in oklab, #0078cd 12%, white) -> #e4effa oklch(0.947 0.019 248.0)
+accent-700 text on accent tint     #005fb2 on #e4effa: WCAG 5.50:1  APCA Lc 70.7
+UI border gray on white (1.4.11)   #767676 on #ffffff: WCAG 4.54:1  APCA Lc 71.6
+light border on white              #c4c4c4 on #ffffff: WCAG 1.74:1  APCA Lc 31.8
+
+## B. Dark theme candidate pairs
+surface #121212 oklch(0.182 0.000 0.0)
+surface #1e1e1e oklch(0.235 0.000 0.0)
+surface #0b1220 oklch(0.183 0.031 263.4)
+white text on #121212              #ffffff on #121212: WCAG 18.73:1  APCA Lc -107.3
+text #e5e5e5 on #121212            #e5e5e5 on #121212: WCAG 14.87:1  APCA Lc -90.4
+muted #a3a3a3 on #121212           #a3a3a3 on #121212: WCAG 7.43:1  APCA Lc -51.9
+brand on #121212                   #3ea6ff on #121212: WCAG 7.23:1  APCA Lc -51.1
+accent-300 on #121212              #77c4ff on #121212: WCAG 9.92:1  APCA Lc -66.2
+light-theme accent-600 on #121212  #0078cd on #121212: WCAG 4.08:1  APCA Lc -29.9
+dark text on brand button          #0b1220 on #3ea6ff: WCAG 7.22:1  APCA Lc 53.0
+brand on raised #1e1e1e            #3ea6ff on #1e1e1e: WCAG 6.43:1  APCA Lc -49.9
+light-theme danger on #121212      #d32f2f on #121212: WCAG 3.76:1  APCA Lc -28.3
+lighter danger on #121212          #ff8a80 on #121212: WCAG 8.21:1  APCA Lc -56.9
+danger on white                    #d32f2f on #ffffff: WCAG 4.98:1  APCA Lc 72.8
+
+## C. Same OKLCH L step, light end vs dark end (gray pairs)
+L 1 #ffffff vs L 0.8 #bebebe: WCAG 1.86:1
+L 0.8 #bebebe vs L 0.6 #808080: WCAG 2.12:1
+L 0.4 #484848 vs L 0.2 #161616: WCAG 1.98:1
+L 0.3 #2e2e2e vs L 0.1 #030303: WCAG 1.52:1
+
+## D. Extra pairs for examples
+accent-600 link on raised #1e1e1e  #0078cd on #1e1e1e: WCAG 3.63:1  APCA Lc -28.6
+color-mix(in srgb, #0078cd, black 15%) -> #0066ae oklch(0.501 0.139 249.2)
+white on srgb-mixed hover          #ffffff on #0066ae: WCAG 5.98:1  APCA Lc -84.4

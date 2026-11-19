@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Module 6 figure: contrast-color() picks black or white</title>
+<style>
+  @font-face { font-family: Inter; src: url("../../lab/module-06/fonts/inter-roman-latin.woff2") format("woff2"); font-weight: 100 900; }
+  body { margin: 0; padding: 16px; font: 15px/1.4 Inter, Arial, sans-serif; color: #000; background: #fff; width: 768px; box-sizing: border-box; display: flex; gap: 24px; }
+  figure { margin: 0; width: 230px; }
+  figcaption { margin-top: 10px; }
+  code { font: 13px Menlo, monospace; }
+  .swatch { padding: 10px 20px; font-size: 18px; line-height: 1.5; color: contrast-color(var(--bg)); background: var(--bg); }
+</style>
+<figure><div class="swatch" style="--bg: #3ea6ff">Download 2.4</div><figcaption><code>#3ea6ff</code>: black, 8.10:1. White would be 2.59:1.</figcaption></figure>
+<figure><div class="swatch" style="--bg: #0078cd">Download 2.4</div><figcaption><code>#0078cd</code>: white, 4.60:1. Black would be 4.57:1.</figcaption></figure>
+<figure><div class="swatch" style="--bg: #2277d3">Download 2.4</div><figcaption><code>#2277d3</code>: black, 4.65:1. White would be 4.52:1.</figcaption></figure>

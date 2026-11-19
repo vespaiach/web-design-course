@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Module 6 figure: the button and two fixes</title>
+<style>
+  @font-face { font-family: Inter; src: url("../../lab/module-06/fonts/inter-roman-latin.woff2") format("woff2"); font-weight: 100 900; }
+  body { margin: 0; padding: 16px; font: 15px/1.4 Inter, Arial, sans-serif; color: #000; background: #fff; width: 768px; box-sizing: border-box; display: flex; gap: 24px; }
+  figure { margin: 0; width: 230px; }
+  figcaption { margin-top: 10px; }
+  code { font: 13px Menlo, monospace; }
+  .button { display: inline-block; padding: 10px 20px; font-size: 18px; line-height: 1.5; }
+  .before { background: #3ea6ff; color: #fff; }
+  .fix-a { background: #3ea6ff; color: #222222; }
+  .fix-b { background: #0078cd; color: #fff; }
+</style>
+<figure><span class="button before">Download 2.4</span><figcaption>Before: <code>#fff</code> on <code>#3ea6ff</code>, 2.59:1</figcaption></figure>
+<figure><span class="button fix-a">Download 2.4</span><figcaption>Fix A, dark text: <code>#222222</code> on <code>#3ea6ff</code>, 6.14:1</figcaption></figure>
+<figure><span class="button fix-b">Download 2.4</span><figcaption>Fix B, darker fill: <code>#fff</code> on <code>#0078cd</code>, 4.60:1</figcaption></figure>

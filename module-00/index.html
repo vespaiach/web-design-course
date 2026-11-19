@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stashling - simple encrypted backups</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Stashling</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="article.html">Blog</a>
+      <a href="index.html#download">Download</a>
+      <a href="signup.html">Sign up</a>
+    </nav>
+    <a class="settings-link" href="settings.html" title="Settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="3.5 3.96"/>
+        <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="4"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="content">
+    <section class="hero">
+      <h1>Stashling: Simple, Fast, Encrypted Backups for Your Files</h1>
+      <p><strong>Back up your home folder to any storage you own. Free and open source.</strong></p>
+      <p>Stashling copies only what changed, encrypts everything before it leaves your computer, and lets you restore any file from any day.</p>
+      <p>
+        <a class="button" href="#download">Download 2.4</a>
+        <a class="button" href="signup.html">Create an account</a>
+        <a class="button" href="article.html">Read the blog</a>
+        <a class="button" href="#features">See all features</a>
+      </p>
+      <img src="images/hero.webp" alt="A laptop running Stashling on a desk next to an external drive">
+    </section>
+
+    <section id="features">
+      <h2>Why Stashling?</h2>
+      <div class="features">
+        <div class="feature">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="5" y="11" width="14" height="10" rx="2"/>
+            <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+          </svg>
+          <h3>Encrypted on your computer</h3>
+          <p>Your files are encrypted with your own key before upload. The storage provider only ever sees noise.</p>
+        </div>
+        <div class="feature">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="#000" aria-hidden="true">
+            <path d="M12 2 2 7l10 5 10-5-10-5Z"/>
+            <path d="m2 12 10 5 10-5-2-1-8 4-8-4-2 1Z"/>
+            <path d="m2 17 10 5 10-5-2-1-8 4-8-4-2 1Z"/>
+          </svg>
+          <h3>Stores each piece once</h3>
+          <p>Deduplication splits files into chunks and keeps every chunk only once, so a year of daily backups stays small.</p>
+        </div>
+        <div class="feature">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+            <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>
+          </svg>
+          <h3>Fast after the first run</h3>
+          <p>After the first backup, Stashling reads only the files that changed. A typical nightly run takes under five minutes.</p>
+        </div>
+        <div class="feature">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0000ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 18a5 5 0 0 1-.6-9.96A6 6 0 0 1 18 9a4.5 4.5 0 0 1 0 9Z"/>
+          </svg>
+          <h3>Any storage you like</h3>
+          <p>Use a USB drive, a folder on your NAS, an SFTP server or any S3-compatible bucket. Switch any time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Trusted by people who hate losing files</h2>
+      <div class="stats">
+        <p>3,200+ home servers</p>
+        <p>41 contributors</p>
+        <p>2.1 million snapshots last month</p>
+      </div>
+      <p class="quote">"I restored a folder I deleted eight months ago in under a minute. Stashling paid for itself, and it was free."</p>
+      <p class="quote">- Priya, runs a small photo studio</p>
+    </section>
+
+    <section id="download" class="download">
+      <h2>Download Stashling 2.4</h2>
+      <p>For Linux, macOS and Windows. One small file, no installer.</p>
+      <pre>stashling init --repo /mnt/backup
+stashling backup ~/</pre>
+      <p>
+        <a class="button" href="#">Linux</a>
+        <a class="button" href="#">macOS</a>
+        <a class="button" href="#">Windows</a>
+      </p>
+      <p>Read the <a href="article.html">release notes and blog</a> to see what is new.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Stashling is free software under the MIT license. Built by volunteers since 2021.</p>
+  </footer>
+</body>
+</html>

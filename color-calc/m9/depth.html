@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Figure 10 demo: one card three ways (border, shadow, fill), in the light theme and the dark theme, with the lab's tokens -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../../lab/module-09/tokens.css">
+  <link rel="stylesheet" href="../../lab/module-09/base.css">
+  <style>
+    body { margin: 0; }
+    .theme { display: flex; gap: var(--space-6); padding: var(--space-6); background: var(--color-surface); color: var(--color-text); }
+    .dark { color-scheme: dark; } /* light-dark() picks the dark values inside this row */
+    .card { inline-size: 14rem; padding: var(--space-4); border-radius: var(--radius-large); }
+    .card h3, .card p { margin: 0; }
+    .card p { font-size: var(--step--1); }
+
+    .border { border: 1px solid var(--color-border); }
+    .shadow { box-shadow: var(--shadow-raised); }
+    .fill { background: var(--color-surface-alt); }
+  </style>
+</head>
+<body>
+  <div class="theme">
+    <div class="card border"><h3>Border</h3><p>1px solid var(--color-border)</p></div>
+    <div class="card shadow"><h3>Shadow</h3><p>var(--shadow-raised)</p></div>
+    <div class="card fill"><h3>Fill</h3><p>var(--color-surface-alt)</p></div>
+  </div>
+  <div class="theme dark">
+    <div class="card border"><h3>Border</h3><p>1px solid var(--color-border)</p></div>
+    <div class="card shadow"><h3>Shadow</h3><p>var(--shadow-raised)</p></div>
+    <div class="card fill"><h3>Fill</h3><p>var(--color-surface-alt)</p></div>
+  </div>
+</body>
+</html>

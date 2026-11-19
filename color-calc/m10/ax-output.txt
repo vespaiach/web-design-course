@@ -1,0 +1,13 @@
+-- page loaded
+name      "Full name (optional)" | desc: "" | invalid: false | required: false
+email     "Email" | desc: "" | invalid: false | required: true
+username  "Username" | desc: "Use 3 to 20 lowercase letters, numbers or hyphens" | invalid: false | required: true
+password  "Password" | desc: "Use at least 12 characters" | invalid: false | required: true
+terms     "I agree to the terms of service" | desc: "" | invalid: true | required: undefined
+-- after a submit attempt with every field empty
+name      "Full name (optional)" | desc: "" | invalid: false | required: false
+email     "Email Enter an email address in the correct format, like name@example.com" | desc: "" | invalid: false | required: true
+username  "Username Enter a username of 3 to 20 lowercase letters, numbers or hyphens" | desc: "Use 3 to 20 lowercase letters, numbers or hyphens" | invalid: false | required: true
+password  "Password Enter a password of at least 12 characters" | desc: "Use at least 12 characters" | invalid: false | required: true
+terms     "I agree to the terms of service Agree to the terms of service to create an account" | desc: "" | invalid: true | required: undefined
+Google Chrome 157.0.8103.79 

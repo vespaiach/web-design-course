@@ -1,0 +1,7 @@
+#0000ff filter:grayscale(1) #121212  luminance-gray #4c4c4c  oklch(from c l 0 h) #565656
+#ffff00 filter:grayscale(1) #ededed  luminance-gray #f7f7f7  oklch(from c l 0 h) #f4f4f4
+#ff0000 filter:grayscale(1) #363636  luminance-gray #7f7f7f  oklch(from c l 0 h) #888888
+#00ff00 filter:grayscale(1) #b6b6b6  luminance-gray #dcdcdc  oklch(from c l 0 h) #d3d3d3
+#3ea6ff filter:grayscale(1) #969696  luminance-gray #a1a1a1  oklch(from c l 0 h) #a0a0a0
+#d32f2f filter:grayscale(1) #525252  luminance-gray #707070  oklch(from c l 0 h) #777777
+#388e3c filter:grayscale(1) #767676  luminance-gray #7d7d7d  oklch(from c l 0 h) #797979

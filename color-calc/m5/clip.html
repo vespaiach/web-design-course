@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Module 5 figure: clipping versus gamut mapping</title>
+<style>
+  body { margin: 0; padding: 16px; font: 15px/1.4 Arial, sans-serif; color: #000; background: #fff; width: 768px; box-sizing: border-box; display: flex; gap: 24px; }
+  figure { margin: 0; width: 230px; }
+  .swatch { height: 120px; }
+  figcaption { margin-top: 6px; }
+  code { font: 14px Menlo, monospace; }
+</style>
+<figure><div class="swatch" style="background: oklch(0.7 0.3 150)"></div>
+  <figcaption><code>oklch(0.7 0.3 150)</code> as Chrome 157 draws it on an sRGB screen</figcaption></figure>
+<figure><div class="swatch" style="background: #00c248"></div>
+  <figcaption><code>#00c248</code>, what CSS gamut mapping asks for</figcaption></figure>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up - Stashling</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Stashling</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="article.html">Blog</a>
+      <a href="index.html#download">Download</a>
+      <a href="signup.html">Sign up</a>
+    </nav>
+    <a class="settings-link" href="settings.html" title="Settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="3.5 3.96"/>
+        <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="4"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="content">
+    <form class="signup-form" action="settings.html" method="post">
+      <h1>Create your Stashling account</h1>
+      <p>An account lets you use hosted storage and manage your backups from the web.</p>
+
+      <div class="row">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="row">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" pattern="[a-z0-9-]{3,20}" required>
+      </div>
+      <div class="row">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" minlength="12" required>
+      </div>
+      <div class="row">
+        <label for="plan">Plan</label>
+        <select id="plan" name="plan">
+          <option>Free - use my own storage</option>
+          <option>Hosted 100 GB - $2 a month</option>
+          <option>Hosted 1 TB - $8 a month</option>
+        </select>
+      </div>
+      <div class="row checkbox-row">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the <a href="#">terms of service</a></label>
+      </div>
+      <div class="actions">
+        <button class="button" type="submit">Create account</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>Stashling is free software under the MIT license. Built by volunteers since 2021.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+self-check passed: ratio() agrees with colorjs.io WCAG21 within 0.002
+
+## light theme
+-- links (G183: 3:1 against the text around them, 4.5:1 against the surface)
+link on surface                              #0078cd vs #ffffff: 4.60:1
+link vs body text                            #0078cd vs #222222: 3.46:1
+-- focus ring, one color = accent, on every background it can sit on (1.4.11: 3:1)
+ring on surface                              #0078cd vs #ffffff: 4.60:1
+ring on bar (header, footer)                 #0078cd vs #222222: 3.46:1
+ring on surface-alt (code block)             #0078cd vs #e8e8e8: 3.75:1
+ring on accent fill (offset 0, for contrast) #0078cd vs #0078cd: 1.00:1
+-- buttons
+on-accent on accent                          #ffffff vs #0078cd: 4.60:1
+on-accent on hover #005fa5                   #ffffff vs #005fa5: 6.60:1
+on-accent on pressed (black 25%) #00508b     #ffffff vs #00508b: 8.33:1
+disabled: muted on surface-alt               #5d5d5d vs #e8e8e8: 5.37:1
+disabled fill vs surface                     #e8e8e8 vs #ffffff: 1.23:1
+disabled fill vs enabled fill                #e8e8e8 vs #0078cd: 3.75:1
+-- borders and other non-text
+border on surface                            #bebebe vs #ffffff: 1.86:1
+muted on surface (border candidate)          #5d5d5d vs #ffffff: 6.58:1
+bar (menu panel) vs surface                  #222222 vs #ffffff: 15.91:1
+
+## dark theme
+-- links (G183: 3:1 against the text around them, 4.5:1 against the surface)
+link on surface                              #77c4ff vs #222222: 8.43:1
+link vs body text                            #77c4ff vs #e8e8e8: 1.54:1
+-- focus ring, one color = accent, on every background it can sit on (1.4.11: 3:1)
+ring on surface                              #77c4ff vs #222222: 8.43:1
+ring on bar (header, footer)                 #77c4ff vs #333333: 6.69:1
+ring on surface-alt (code block)             #77c4ff vs #333333: 6.69:1
+ring on accent fill (offset 0, for contrast) #77c4ff vs #77c4ff: 1.00:1
+-- buttons
+on-accent on accent                          #222222 vs #77c4ff: 8.43:1
+on-accent on hover #5f9dce                   #222222 vs #5f9dce: 5.46:1
+on-accent on pressed (black 25%) #4f85ae     #222222 vs #4f85ae: 4.01:1
+disabled: muted on surface-alt               #a4a4a4 vs #333333: 5.07:1
+disabled fill vs surface                     #333333 vs #222222: 1.26:1
+disabled fill vs enabled fill                #333333 vs #77c4ff: 6.69:1
+-- borders and other non-text
+border on surface                            #5d5d5d vs #222222: 2.42:1
+muted on surface (border candidate)          #a4a4a4 vs #222222: 6.38:1
+bar (menu panel) vs surface                  #333333 vs #222222: 1.26:1
+
+## Critique scenario
+link #4a7fb5 vs text #333333                 #4a7fb5 vs #333333: 3.00:1
+link #4a7fb5 on white                        #4a7fb5 vs #ffffff: 4.20:1
+focus ring #ffffff on #ffffff (white ring, white page) #ffffff vs #ffffff: 1.00:1
+disabled #a0a0a0 text on #d9d9d9             #a0a0a0 vs #d9d9d9: 1.85:1
+
+## Chrome 157's default focus ring (outline: auto, color read with getComputedStyle)
+light: #005fcc on surface                    #005fcc vs #ffffff: 5.98:1
+light: #005fcc on bar                        #005fcc vs #222222: 2.66:1
+dark: #99c8ff on surface                     #99c8ff vs #222222: 9.14:1
+dark: #99c8ff on bar                         #99c8ff vs #333333: 7.26:1
+light: #005fcc on the accent button          #005fcc vs #0078cd: 1.30:1
+
+## Shadows: the key layer alone, black at 30% over the surface (sRGB blend)
+light: #b3b3b3 on surface                    #b3b3b3 vs #ffffff: 2.10:1
+dark: #181818 on surface                     #181818 vs #222222: 1.12:1
+
+## Critique scenario: text #333333 on white
+text on white                                #333333 vs #ffffff: 12.63:1
+link #2f6fb0 on white                        #2f6fb0 vs #ffffff: 5.22:1
+link #2f6fb0 vs text                         #2f6fb0 vs #333333: 2.42:1
+link #3b7dc4 on white                        #3b7dc4 vs #ffffff: 4.27:1
+link #3b7dc4 vs text                         #3b7dc4 vs #333333: 2.96:1
+best possible: a link at exactly 4.5:1 on white is 2.81:1 against #333333 (ratios multiply)

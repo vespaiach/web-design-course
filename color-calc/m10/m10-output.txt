@@ -1,0 +1,34 @@
+self-check passed: ratio() agrees with colorjs.io WCAG21 within 0.002
+
+## light theme
+-- the edge of a field (1.4.11: 3:1 against the colors next to it)
+Chrome 157 default edge on the page                  #767676 vs #ffffff: 4.54:1
+Chrome 157 default edge on its own fill              #767676 vs #ffffff: 4.54:1
+--color-border (the cards' border) on surface        #bebebe vs #ffffff: 1.86:1
+--color-field-border = --color-muted on surface      #5d5d5d vs #ffffff: 6.58:1
+-- words
+hint text: muted on surface (1.4.3: 4.5:1)           #5d5d5d vs #ffffff: 6.58:1
+error text: danger on surface (1.4.3: 4.5:1)         #d02c2a vs #ffffff: 5.15:1
+field text: text on surface                          #222222 vs #ffffff: 15.91:1
+-- an invalid field's edge
+danger edge on surface (1.4.11: 3:1)                 #d02c2a vs #ffffff: 5.15:1
+danger edge vs the normal edge (color change only)   #d02c2a vs #5d5d5d: 1.28:1
+
+## dark theme
+-- the edge of a field (1.4.11: 3:1 against the colors next to it)
+Chrome 157 default edge on the page                  #858585 vs #222222: 4.31:1
+Chrome 157 default edge on its own fill              #858585 vs #3b3b3b: 3.04:1
+--color-border (the cards' border) on surface        #5d5d5d vs #222222: 2.42:1
+--color-field-border = --color-muted on surface      #a4a4a4 vs #222222: 6.38:1
+-- words
+hint text: muted on surface (1.4.3: 4.5:1)           #a4a4a4 vs #222222: 6.38:1
+error text: danger on surface (1.4.3: 4.5:1)         #ff998d vs #222222: 7.72:1
+field text: text on surface                          #e8e8e8 vs #222222: 12.98:1
+-- an invalid field's edge
+danger edge on surface (1.4.11: 3:1)                 #ff998d vs #222222: 7.72:1
+danger edge vs the normal edge (color change only)   #ff998d vs #a4a4a4: 1.21:1
+
+## Critique scenario
+placeholder #a9a9a9 on white                         #a9a9a9 vs #ffffff: 2.35:1
+field border #dddddd on white                        #dddddd vs #ffffff: 1.36:1
+error text #ff6b6b on white                          #ff6b6b vs #ffffff: 2.78:1

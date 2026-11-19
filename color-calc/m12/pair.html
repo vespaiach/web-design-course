@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- Puts lab screenshots side by side for one figure.
+     pair.html?p=panels/a.webp,panels/b.webp&l=Before|After (add &col=1 to stack them) -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 16px; background: #ffffff; color: #222222; font: 15px/1.4 Inter, Arial, sans-serif; }
+  .row { display: flex; gap: 24px; align-items: start; }
+  figure { margin: 0; }
+  figcaption { margin-bottom: 6px; font-weight: 600; }
+  img { display: block; border: 1px solid #bebebe; }
+</style>
+</head>
+<body>
+<div class="row"></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const labels = q.get("l").split("|");
+  if (q.get("col")) document.querySelector(".row").style.flexDirection = "column";
+  q.get("p").split(",").forEach((src, i) => {
+    const f = document.createElement("figure");
+    f.innerHTML = `<figcaption>${labels[i]}</figcaption><img src="${src}" alt="">`;
+    document.querySelector(".row").append(f);
+  });
+</script>
+</body>
+</html>

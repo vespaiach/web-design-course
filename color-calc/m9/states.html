@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Figure 5 demo: one button in five states, with the lab's CSS. ?m=08 or ?m=09 picks the lab folder.
+     Shot with: FORCE='#hover=hover;#focus=focus,focus-visible;#active=hover,active' -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    const m = new URLSearchParams(location.search).get("m") || "09";
+    for (const f of ["tokens", "base"]) document.write(`<link rel="stylesheet" href="../../lab/module-${m}/${f}.css">`);
+  </script>
+  <style>
+    body { padding: 24px 32px; }
+    .row { display: flex; gap: 32px; align-items: end; }
+    figure { margin: 0; display: grid; gap: 12px; justify-items: center; }
+    figcaption { font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <figure><button class="button" type="button">Restore</button><figcaption>Enabled</figcaption></figure>
+    <figure><button class="button" type="button" id="hover">Restore</button><figcaption>Hover</figcaption></figure>
+    <figure><button class="button" type="button" id="focus">Restore</button><figcaption>Focus (keyboard)</figcaption></figure>
+    <figure><button class="button" type="button" id="active">Restore</button><figcaption>Pressed</figcaption></figure>
+    <figure><button class="button" type="button" disabled>Restore</button><figcaption>Disabled</figcaption></figure>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* Design tokens: named values that the other CSS files use. */
+:root {
+  /* Spacing scale on a 4px base. 1rem is 16px at the browser default. */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem;    /* 16px */
+  --space-5: 1.5rem;  /* 24px */
+  --space-6: 2rem;    /* 32px */
+  --space-7: 3rem;    /* 48px */
+  --space-8: 4rem;    /* 64px */
+
+  /* Spacing by meaning */
+  --space-inside: var(--space-4);  /* between items of one group */
+  --space-between: var(--space-7); /* between groups */
+
+  /* Type. Both stacks are from modernfontstacks.com (CC0). */
+  --font-text: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  --font-code: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+  /* Type scale: fluid from a 320px to a 1280px viewport,
+     ratio 1.2 from 16px, growing to ratio 1.25 from 18px. */
+  --step--1: clamp(0.8333rem, 0.8111rem + 0.1111vw, 0.9rem);     /* 13.33 to 14.40px */
+  --step-0: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);         /* 16.00 to 18.00px */
+  --step-1: clamp(1.2rem, 1.1312rem + 0.3438vw, 1.4063rem);      /* 19.20 to 22.50px */
+  --step-2: clamp(1.44rem, 1.3341rem + 0.5297vw, 1.7578rem);     /* 23.04 to 28.13px */
+  --step-3: clamp(1.728rem, 1.5716rem + 0.7821vw, 2.1973rem);    /* 27.65 to 35.16px */
+  --step-4: clamp(2.0736rem, 1.8493rem + 1.1216vw, 2.7466rem);   /* 33.18 to 43.95px */
+  --size-title: var(--step-4); /* the one largest text on a page */
+
+  --measure: 50ch;          /* text column: about 65 characters of Inter */
+  --leading-body: 1.5;      /* line height of text */
+  --leading-heading: 1.2;   /* line height of headings */
+  --tracking-tight: -0.02em; /* large headings */
+  --color-muted: #555;   /* secondary text: 7.46:1 on white */
+}

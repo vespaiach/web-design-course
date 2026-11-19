@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design system - Stashling</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="settings.css"> <!-- for the status labels -->
+  <link rel="stylesheet" href="system.css">
+  <script src="menu.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Stashling</a>
+    <button class="menu-button" type="button" hidden>Menu</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="article.html">Blog</a>
+      <a href="index.html#download">Download</a>
+      <a class="nav-account" href="signup.html">Sign up</a>
+    </nav>
+    <a class="settings-link" href="settings.html">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+      Settings
+    </a>
+  </header>
+
+  <main class="content system">
+    <div class="intro">
+      <h1>Stashling design system</h1>
+      <p>Every sample on this page is drawn by <code>tokens.css</code> and <code>base.css</code>. Change a token, reload, and the sample changes. Switch the system to dark mode to see the dark theme.</p>
+    </div>
+
+    <section>
+      <h2>Color</h2>
+      <p>Rules use these semantic tokens, never a scale step or a hex value.</p>
+      <ul class="swatches">
+        <li style="--swatch: var(--color-surface)"><span><code>--color-surface</code> page background</span></li>
+        <li style="--swatch: var(--color-surface-alt)"><span><code>--color-surface-alt</code> code blocks, disabled buttons</span></li>
+        <li style="--swatch: var(--color-text)"><span><code>--color-text</code> body text</span></li>
+        <li style="--swatch: var(--color-muted)"><span><code>--color-muted</code> secondary text, field edges</span></li>
+        <li style="--swatch: var(--color-border)"><span><code>--color-border</code> card and table lines</span></li>
+        <li style="--swatch: var(--color-bar)"><span><code>--color-bar</code> header and footer, with <code>--color-on-bar</code></span></li>
+        <li style="--swatch: var(--color-accent)"><span><code>--color-accent</code> buttons, links, focus, with <code>--color-on-accent</code></span></li>
+        <li style="--swatch: var(--color-danger)"><span><code>--color-danger</code> errors, destructive buttons, with <code>--color-on-danger</code></span></li>
+        <li style="--swatch: var(--color-status-ok)"><span><code>--color-status-ok</code>, <code>-running</code>, <code>-failed</code> status labels</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Type</h2>
+      <p>One family, Inter, and six steps of a fluid scale. Body text is <code>--step-0</code>.</p>
+      <p style="font-size: var(--step-4)">Page title <code>--step-4</code></p>
+      <p style="font-size: var(--step-3)">Price, h1 <code>--step-3</code></p>
+      <p style="font-size: var(--step-2)">h2 <code>--step-2</code></p>
+      <p style="font-size: var(--step-1)">h3, logo, plan name <code>--step-1</code></p>
+      <p style="font-size: var(--step-0)">Body text and fields <code>--step-0</code></p>
+      <p style="font-size: var(--step--1)">Footer, labels <code>--step--1</code></p>
+    </section>
+
+    <section>
+      <h2>Space</h2>
+      <p>Eight steps on a 4px base. Use <code>--space-inside</code> within a group and <code>--space-between</code> between groups.</p>
+      <ul class="spaces">
+        <li style="--size: var(--space-1)"><span><code>--space-1</code> 4px</span></li>
+        <li style="--size: var(--space-2)"><span><code>--space-2</code> 8px</span></li>
+        <li style="--size: var(--space-3)"><span><code>--space-3</code> 12px</span></li>
+        <li style="--size: var(--space-4)"><span><code>--space-4</code> 16px, inside</span></li>
+        <li style="--size: var(--space-5)"><span><code>--space-5</code> 24px</span></li>
+        <li style="--size: var(--space-6)"><span><code>--space-6</code> 32px</span></li>
+        <li style="--size: var(--space-7)"><span><code>--space-7</code> 48px, between</span></li>
+        <li style="--size: var(--space-8)"><span><code>--space-8</code> 64px</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Components</h2>
+      <h3>Button</h3>
+      <p>One per view is the primary action. States: hover darkens the fill 15%, pressed moves 1px down, focus draws the ring, disabled loses the fill.</p>
+      <div class="samples">
+        <button class="button" type="button">Save schedule</button>
+        <button class="button button-danger" type="button">Delete snapshot</button>
+        <button class="button" type="button" disabled>Restore selected</button>
+      </div>
+      <h3>Link</h3>
+      <p>Underlined in text, in <code>--color-link</code>. Every other action on a view is a link.</p>
+      <p><a href="pricing.html">Compare the plans</a></p>
+      <h3>Field</h3>
+      <p>Label above, hint under the label, error inside the label after the field is left or the form is sent.</p>
+      <div class="field">
+        <label for="sample">Username</label>
+        <p class="hint">Use 3 to 20 lowercase letters, numbers or hyphens</p>
+        <input type="text" id="sample">
+      </div>
+      <h3>Card</h3>
+      <p>A 1px <code>--color-border</code> line, <code>--radius-large</code> corners, padding from the space scale. Cards in a row share rows with subgrid. Used by <a href="index.html#features">the features</a>, <a href="pricing.html">the plans</a> and <a href="signup.html">the sign-up form</a>.</p>
+      <h3>Table</h3>
+      <p>Lines in <code>--color-border</code>, text aligned to the start, numbers in a column aligned to the end with tabular figures. It scrolls inside its own box on a phone. Used on <a href="settings.html">settings</a> and <a href="pricing.html">pricing</a>.</p>
+      <h3>Status label</h3>
+      <p class="samples">
+        <span class="status status-ok">Done</span>
+        <span class="status status-running">Running</span>
+        <span class="status status-failed">Failed</span>
+      </p>
+      <h3>Header</h3>
+      <p>The bar at the top of this page: logo, nav, Sign up and Settings at the right, the current page underlined. Below 44rem the nav becomes a menu that closes on Esc.</p>
+    </section>
+
+    <section>
+      <h2>Not tokens yet</h2>
+      <p>These values are still written by hand: the header's 10px padding and 15px gaps, the footer's 30px margin, the 10px padding of code blocks, the sign-up form's 20px margin and padding. The table and card rules are copied on each page that uses them.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Stashling is free software under the MIT license. Built by volunteers since 2021.</p>
+  </footer>
+</body>
+</html>

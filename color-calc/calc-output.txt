@@ -1,0 +1,108 @@
+self-check passed (hand formulas == colorjs.io 0.7.1)
+
+## 1. Same HSL lightness (50%), different OKLCH L and WCAG luminance
+red          hsl(0 100% 50%)    #ff0000  oklch(0.628 0.258 29.2)  Y=0.2126  vs white 4.00:1  vs black 5.25:1
+yellow       hsl(60 100% 50%)   #ffff00  oklch(0.968 0.211 109.8)  Y=0.9278  vs white 1.07:1  vs black 19.56:1
+green(lime)  hsl(120 100% 50%)  #00ff00  oklch(0.866 0.295 142.5)  Y=0.7152  vs white 1.37:1  vs black 15.30:1
+cyan         hsl(180 100% 50%)  #00ffff  oklch(0.905 0.155 194.8)  Y=0.7874  vs white 1.25:1  vs black 16.75:1
+blue         hsl(240 100% 50%)  #0000ff  oklch(0.452 0.313 264.1)  Y=0.0722  vs white 8.59:1  vs black 2.44:1
+magenta      hsl(300 100% 50%)  #ff00ff  oklch(0.702 0.322 328.4)  Y=0.2848  vs white 3.14:1  vs black 6.70:1
+
+## 2. Brand color #3ea6ff
+oklch oklch(0.707 0.161 248.4)  hsl hsl(207.7 100% 62.16%)  Y 0.3552
+text #ffffff on #3ea6ff: WCAG 2.59:1  APCA Lc -55.3
+text #000000 on #3ea6ff: WCAG 8.10:1  APCA Lc 53.8
+text #111111 on #3ea6ff: WCAG 7.29:1  APCA Lc 53.1
+text #0b1220 on #3ea6ff: WCAG 7.22:1  APCA Lc 53.0
+text #1f2937 on #3ea6ff: WCAG 5.66:1  APCA Lc 49.2
+text #333333 on #3ea6ff: WCAG 4.88:1  APCA Lc 46.4
+text #3ea6ff on #ffffff: WCAG 2.59:1  APCA Lc 50.2
+text #3ea6ff on #121212: WCAG 7.23:1  APCA Lc -51.1
+
+## 3. Darken #3ea6ff in OKLCH (same C,H) until white text passes 4.5:1 and 3:1
+L=0.70 -> #3ba4fd (in sRGB)  white text 2.65:1  APCA Lc(white on it) -56.4
+L=0.66 -> #2b97ef (in sRGB)  white text 3.10:1  APCA Lc(white on it) -62.8
+L=0.65 -> #2794eb (in sRGB)  white text 3.22:1  APCA Lc(white on it) -64.3
+L=0.56 -> #0078cd (mapped)  white text 4.60:1  APCA Lc(white on it) -76.7
+L=0.55 -> #0075ca (mapped)  white text 4.78:1  APCA Lc(white on it) -77.9
+
+## 4. Tonal scale on hue of #3ea6ff (OKLCH, chroma capped then CSS-gamut-mapped to sRGB)
+ 50  L=0.97 #e3f8ff  actual oklch(0.966 0.024 219.7)  inGamut@C=0.161:false  vs white 1.10  vs #0b1220 17.06
+100  L=0.93 #cbecff  actual oklch(0.925 0.043 233.2)  inGamut@C=0.161:false  vs white 1.24  vs #0b1220 15.14
+200  L=0.87 #a6daff  actual oklch(0.865 0.075 239.7)  inGamut@C=0.161:false  vs white 1.49  vs #0b1220 12.57
+300  L=0.80 #77c4ff  actual oklch(0.793 0.114 243.0)  inGamut@C=0.161:false  vs white 1.89  vs #0b1220 9.92
+400  L=0.72 #43aaff  actual oklch(0.717 0.156 247.3)  inGamut@C=0.161:false  vs white 2.49  vs #0b1220 7.52
+500  L=0.64 #2291e8  actual oklch(0.641 0.161 248.2)  inGamut@C=0.161:true  vs white 3.34  vs #0b1220 5.60
+600  L=0.56 #0078cd  actual oklch(0.563 0.158 249.6)  inGamut@C=0.161:false  vs white 4.60  vs #0b1220 4.07
+700  L=0.48 #005fb2  actual oklch(0.487 0.152 253.3)  inGamut@C=0.161:false  vs white 6.40  vs #0b1220 2.92
+800  L=0.40 #004890  actual oklch(0.408 0.134 255.0)  inGamut@C=0.161:false  vs white 9.01  vs #0b1220 2.08
+900  L=0.32 #00336d  actual oklch(0.329 0.113 256.1)  inGamut@C=0.161:false  vs white 12.39  vs #0b1220 1.51
+950  L=0.25 #00214f  actual oklch(0.258 0.093 257.4)  inGamut@C=0.161:false  vs white 15.78  vs #0b1220 1.19
+
+## 5. contrast-color() style choice (WCAG ratio) and MDN's #2277d3 example
+#3ea6ff: white 2.59:1, black 8.10:1 -> higher WCAG: black; APCA Lc white -55.3, black 53.8
+#2277d3: white 4.52:1, black 4.65:1 -> higher WCAG: black; APCA Lc white -76.3, black 33.2
+#767676: white 4.54:1, black 4.62:1 -> higher WCAG: black; APCA Lc white -77.0, black 32.5
+#777777: white 4.48:1, black 4.69:1 -> higher WCAG: black; APCA Lc white -76.6, black 33.0
+#ff0000: white 4.00:1, black 5.25:1 -> higher WCAG: black; APCA Lc white -69.6, black 40.0
+
+## 6. CSS Color 5 light-dark() example check
+blue on white 8.59  blue on black 2.44  #81D9FE on black 13.29
+
+## 7. color-mix() spaces
+white+black 50% in srgb  -> #808080  oklch L 0.600
+white+black 50% in oklab -> #636363  oklch L 0.500
+white+black 50% in oklch -> #636363  oklch L 0.500
+white+black 50% in lab   -> #777777  oklch L 0.569
+white+black 50% in xyz   -> #bcbcbc  oklch L 0.795
+blue+yellow 50% in srgb  -> #808080  oklch(0.600 0.000 89.9)
+blue+yellow 50% in oklab -> #6cabc7  oklch(0.709 0.077 228.0)
+blue+yellow 50% in oklch -> #00bdb0  oklch(0.718 0.126 186.1)
+color-mix(in oklab, #3ea6ff, white 85%) -> #e4f2ff  oklch(0.955 0.023 246.0)  white text 1.14  #0b1220 text 16.44
+color-mix(in oklab, #3ea6ff, black 30%) -> #23659e  oklch(0.494 0.112 248.5)  white text 6.13  #0b1220 text 3.06
+
+## 8. Gamut: primaries
+color(srgb 1 0 0)        oklch(0.628 0.258 29.2)  as srgb(1.0000 0.0000 0.0000)  clip #ff0000 oklch(0.628 0.258 29.2)  css-map #ff0000 oklch(0.628 0.258 29.2)
+color(display-p3 1 0 0)  oklch(0.649 0.299 29.0)  as srgb(1.0931 -0.2267 -0.1501)  clip #ff0000 oklch(0.628 0.258 29.2)  css-map #ff0b0c oklch(0.630 0.255 28.9)
+color(srgb 0 1 0)        oklch(0.866 0.295 142.5)  as srgb(0.0000 1.0000 0.0000)  clip #00ff00 oklch(0.866 0.295 142.5)  css-map #00ff00 oklch(0.866 0.295 142.5)
+color(display-p3 0 1 0)  oklch(0.849 0.369 145.6)  as srgb(-0.5116 1.0183 -0.3107)  clip #00ff00 oklch(0.866 0.295 142.5)  css-map #00fb29 oklch(0.857 0.284 143.3)
+color(display-p3 1 1 0)  oklch(0.965 0.245 110.2)  as srgb(1.0000 1.0000 -0.3463)  clip #ffff00 oklch(0.968 0.211 109.8)  css-map #feff00 oklch(0.967 0.211 110.1)
+oklch(0.7 0.3 150): in srgb false, in p3 false; clip #00cb00 oklch(0.730 0.248 142.5); css-map #00c248 oklch(0.709 0.210 147.1)
+oklch(0.65 0.25 30): in srgb false, in p3 true; clip #ff2815 oklch(0.640 0.246 30.0); css-map #ff2815 oklch(0.640 0.246 30.0)
+oklch(0.7 0.18 250): in srgb false, in p3 false; clip #2ca2ff oklch(0.694 0.169 247.9); css-map #2ca2ff oklch(0.694 0.169 247.9)
+
+## 9. Hue rotation 180deg (complement) of brand in HSL vs OKLCH
+HSL complement #ff973e oklch(0.771 0.159 57.2) Y=0.4374
+OKLCH complement inGamut false; mapped #e08a00 oklch(0.707 0.156 67.0)
+OKLCH hue +30: #8b93ff oklch(0.704 0.157 278.4) (requested C 0.161 in gamut: false)
+OKLCH hue -30: #00b5de oklch(0.716 0.132 221.7) (requested C 0.161 in gamut: false)
+OKLCH hue +120: #f2708d oklch(0.707 0.161 8.2) (requested C 0.161 in gamut: true)
+OKLCH hue +240: #82b335 oklch(0.708 0.162 128.5) (requested C 0.161 in gamut: true)
+
+## 10. Grayscale / CVD: red vs green status colors
+#d32f2f L=0.568 Y=0.1609  deuteranopia #6b5d2d  protanopia #48422e  tritanopia #fd2230
+#388e3c L=0.575 Y=0.2051  deuteranopia #817240  protanopia #927c38  tritanopia #318975
+#e53935 L=0.608 Y=0.1984  deuteranopia #796933  protanopia #544c34  tritanopia #ff2b39
+#43a047 L=0.629 Y=0.2679  deuteranopia #92824b  protanopia #a48d43  tritanopia #3b9a85
+#3ea6ff L=0.707 Y=0.3552  deuteranopia #6c8dfd  protanopia #84a3ff  tritanopia #14bbc1
+#f59e0b L=0.769 Y=0.4389  deuteranopia #dfaf0f  protanopia #c99903  tritanopia #ff8172
+#d32f2f vs #388e3c WCAG 1.21:1 ; #e53935 vs #43a047 1.28:1
+deuteranopia sim: #6b5d2d vs #817240, deltaEOK 0.073 (original deltaEOK 0.297)
+
+## 11. Neutrals: pure vs near-black text, grays on white
+#000000 on #ffffff: WCAG 21.000:1  APCA Lc 106.0  fg oklch(0.000 0.000 0.0)
+#111111 on #ffffff: WCAG 18.883:1  APCA Lc 105.4  fg oklch(0.178 0.000 89.9)
+#1f2937 on #ffffff: WCAG 14.679:1  APCA Lc 101.5  fg oklch(0.278 0.030 256.8)
+#6b7280 on #ffffff: WCAG 4.834:1  APCA Lc 73.6  fg oklch(0.551 0.023 264.4)
+#767676 on #ffffff: WCAG 4.542:1  APCA Lc 71.6  fg oklch(0.566 0.000 89.9)
+#777777 on #ffffff: WCAG 4.478:1  APCA Lc 71.1  fg oklch(0.569 0.000 89.9)
+#949494 on #ffffff: WCAG 3.033:1  APCA Lc 57.1  fg oklch(0.667 0.000 89.9)
+#e5e5e5 on #121212: WCAG 14.872:1  APCA Lc -90.4  fg oklch(0.922 0.000 89.9)
+#a3a3a3 on #121212: WCAG 7.427:1  APCA Lc -51.9  fg oklch(0.715 0.000 89.9)
+#ffffff on #121212: WCAG 18.734:1  APCA Lc -107.3  fg oklch(1.000 0.000 89.9)
+0.50000 -> linear 0.2140
+0.50196 -> linear 0.2159
+0.73536 -> linear 0.5000
+linear 0.5 -> encoded 0.7354 = 188
+min over hues of max in-sRGB chroma at L=0.7: 0.1190 at hue 200
+0:#da7d9b 60:#d58b4b 120:#95a94e 180:#24b6a1 240:#4fa8e1 300:#aa8dde

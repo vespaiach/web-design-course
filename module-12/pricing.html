@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing - Stashling</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="pricing.css">
+  <script src="menu.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Stashling</a>
+    <button class="menu-button" type="button" hidden>Menu</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="pricing.html" aria-current="page">Pricing</a>
+      <a href="article.html">Blog</a>
+      <a href="index.html#download">Download</a>
+      <a class="nav-account" href="signup.html">Sign up</a>
+    </nav>
+    <a class="settings-link" href="settings.html">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+      Settings
+    </a>
+  </header>
+
+  <main class="content pricing">
+    <div class="intro">
+      <h1>Free on your own storage, or hosted from $2 a month</h1>
+      <p>Every plan runs the same Stashling: encrypted on your computer, deduplicated, open source. You pay only if Stashling stores the backups for you.</p>
+    </div>
+
+    <div class="plans">
+      <section class="plan" aria-labelledby="plan-free">
+        <h2 id="plan-free">Free</h2>
+        <p class="price">$0 <span>a month</span></p>
+        <p>Back up to a USB drive, a NAS, an SFTP server or an S3 bucket you already have.</p>
+        <a href="index.html#download">Download 2.4</a>
+      </section>
+      <section class="plan plan-recommended" aria-labelledby="plan-100">
+      <p class="plan-label">Recommended</p>
+        <h2 id="plan-100">Hosted 100 GB</h2>
+        <p class="price">$2 <span>a month</span></p>
+        <p>Stashling stores your encrypted backups. Enough for the documents and photos of one computer.</p>
+        <a class="button" href="signup.html">Sign up for 100 GB</a>
+      </section>
+      <section class="plan" aria-labelledby="plan-1tb">
+        <h2 id="plan-1tb">Hosted 1 TB</h2>
+        <p class="price">$8 <span>a month</span></p>
+        <p>For several computers, or a large photo or video library.</p>
+        <a href="signup.html">Sign up for 1 TB</a>
+      </section>
+    </div>
+
+    <section>
+      <h2 id="compare-title">Compare the plans</h2>
+      <div class="table-scroll" role="region" aria-labelledby="compare-title" tabindex="0">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">Free</th>
+            <th scope="col">Hosted 100 GB</th>
+            <th scope="col">Hosted 1 TB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Price a month</th>
+            <td>$0</td>
+            <td>$2</td>
+            <td>$8</td>
+          </tr>
+          <tr>
+            <th scope="row">Storage</th>
+            <td>Your own</td>
+            <td>100 GB</td>
+            <td>1 TB</td>
+          </tr>
+          <tr>
+            <th scope="row">Computers</th>
+            <td>No limit</td>
+            <td>3</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <th scope="row">Encrypted on your computer</th>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <th scope="row">Settings and restore on the web</th>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <th scope="row">Email when a backup fails</th>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <th scope="row">Help</th>
+            <td>Community forum</td>
+            <td>Email</td>
+            <td>Email</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section class="questions">
+      <h2>Questions about the plans</h2>
+      <div>
+        <h3>Can Stashling read my files?</h3>
+        <p>No. Your files are encrypted with your own key before they leave your computer, on every plan.</p>
+      </div>
+      <div>
+        <h3>What happens when my storage is full?</h3>
+        <p>New backups stop, and you get an email. Move to the next plan, or keep fewer days of snapshots under Settings.</p>
+      </div>
+      <div>
+        <h3>Can I move from hosted storage to my own later?</h3>
+        <p>Yes. Your repository is yours. Download it from Settings, point Stashling at the new place, and cancel the plan.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Stashling is free software under the MIT license. Built by volunteers since 2021.</p>
+  </footer>
+</body>
+</html>

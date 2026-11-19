@@ -1,0 +1,93 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-between);
+  padding-block: var(--space-6);
+}
+
+.settings h1,
+.settings h2,
+.settings p {
+  margin: 0;
+}
+
+.settings section,
+.settings .field {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.settings section {
+  gap: var(--space-inside);
+}
+
+.settings .field {
+  gap: var(--space-1);
+  max-inline-size: 100%;
+}
+
+.settings input,
+.settings select {
+  box-sizing: border-box; /* so 100% includes padding and border */
+  max-inline-size: 100%;
+}
+
+/* The table keeps its columns and scrolls inside this box; the page does not scroll sideways */
+.table-scroll {
+  max-inline-size: 100%;
+  overflow-x: auto;
+}
+
+.settings table {
+  border-collapse: collapse;
+}
+
+.settings th,
+.settings td {
+  border: 1px solid var(--color-border);
+  padding: var(--space-1) var(--space-2);
+  text-align: start; /* headers too: browsers center them */
+  white-space: nowrap; /* one line per row; the box scrolls sideways instead */
+}
+
+/* Columns 4 to 7 hold numbers: right-aligned, every digit the same width,
+   so ones sit under ones. Change the numbers if the columns change. */
+.settings :is(th, td):nth-child(n + 4):nth-child(-n + 7) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The empty state: a row that shows only when it is the table's only row */
+.settings .empty-row:not(:only-child) {
+  display: none;
+}
+
+.settings .empty-row td {
+  padding: var(--space-5);
+  white-space: normal;
+}
+
+.settings .empty-row p {
+  margin-block-end: var(--space-inside);
+}
+
+/* same OKLCH lightness, so no label looks heavier; dark text on all three */
+.status {
+  color: var(--color-on-status);
+  padding: 2px 6px;
+  border-radius: var(--radius-small);
+  font-size: var(--step--1);
+}
+
+.status-ok {
+  background: var(--color-status-ok);
+}
+
+.status-running {
+  background: var(--color-status-running);
+}
+
+.status-failed {
+  background: var(--color-status-failed);
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings - Stashling</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Stashling</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="article.html">Blog</a>
+      <a href="index.html#download">Download</a>
+      <a href="signup.html">Sign up</a>
+    </nav>
+    <a class="settings-link" href="settings.html" title="Settings" aria-label="Settings">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="content settings">
+    <h1>Settings</h1>
+
+    <section>
+      <h2>Account</h2>
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" value="Dana Okafor">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" value="dana@example.com">
+      </div>
+      <button class="button" type="button">Save account</button>
+    </section>
+
+    <section>
+      <h2>Backup schedule</h2>
+      <div class="field">
+        <label for="frequency">Run a backup</label>
+        <select id="frequency">
+          <option>Every hour</option>
+          <option selected>Every day</option>
+          <option>Every week</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="time">At</label>
+        <input type="time" id="time" value="02:00">
+      </div>
+      <div class="field">
+        <label for="keep">Keep snapshots for (days)</label>
+        <input type="number" id="keep" value="90" min="1">
+        <p>Older snapshots are removed after each backup. Chunks still used by a newer snapshot are kept.</p>
+      </div>
+      <button class="button" type="button">Save schedule</button>
+    </section>
+
+    <section>
+      <h2>Storage</h2>
+      <div class="field">
+        <label for="repo">Repository</label>
+        <input type="text" id="repo" value="s3://backups.example.net/dana-laptop" size="40">
+      </div>
+      <p>Used 1.42 GB of 100 GB on the Hosted 100 GB plan.</p>
+    </section>
+
+    <section>
+      <h2 id="snapshots-title">Snapshots</h2>
+      <p>Select a snapshot to restore its files.</p>
+      <div class="table-scroll" role="region" aria-labelledby="snapshots-title" tabindex="0">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Snapshot</th>
+            <th>Started</th>
+            <th>Files</th>
+            <th>Size</th>
+            <th>Added</th>
+            <th>Duration</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" aria-label="Select snapshot c41e8a2"></td>
+            <td>c41e8a2</td>
+            <td>Nov 18, 2026, 2:00 AM</td>
+            <td>128,455</td>
+            <td>1.42 GB</td>
+            <td>18 KB</td>
+            <td>1m 9s</td>
+            <td><span class="status status-running">Running</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" aria-label="Select snapshot a3f9c21"></td>
+            <td>a3f9c21</td>
+            <td>Nov 17, 2026, 2:00 AM</td>
+            <td>128,431</td>
+            <td>1.42 GB</td>
+            <td>3.1 MB</td>
+            <td>4m 12s</td>
+            <td><span class="status status-ok">Done</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" aria-label="Select snapshot 9be04d7"></td>
+            <td>9be04d7</td>
+            <td>Nov 16, 2026, 2:00 AM</td>
+            <td>128,402</td>
+            <td>1.42 GB</td>
+            <td>845 KB</td>
+            <td>41s</td>
+            <td><span class="status status-ok">Done</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" aria-label="Select snapshot 51c8e0a"></td>
+            <td>51c8e0a</td>
+            <td>Nov 15, 2026, 2:00 AM</td>
+            <td>127,950</td>
+            <td>1.41 GB</td>
+            <td>210.6 MB</td>
+            <td>18m 3s</td>
+            <td><span class="status status-ok">Done</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" aria-label="Select snapshot 7c2a19f"></td>
+            <td>7c2a19f</td>
+            <td>Nov 14, 2026, 2:00 AM</td>
+            <td>0</td>
+            <td>0 B</td>
+            <td>0 B</td>
+            <td>2s</td>
+            <td><span class="status status-failed">Failed</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" aria-label="Select snapshot 3d81f6e"></td>
+            <td>3d81f6e</td>
+            <td>Nov 9, 2026, 11:37 PM</td>
+            <td>98,112</td>
+            <td>987.3 MB</td>
+            <td>1.2 GB</td>
+            <td>1h 4m</td>
+            <td><span class="status status-ok">Done</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" aria-label="Select snapshot f5a0b92"></td>
+            <td>f5a0b92</td>
+            <td>Nov 8, 2026, 2:00 AM</td>
+            <td>3,402</td>
+            <td>76.5 MB</td>
+            <td>412 KB</td>
+            <td>9s</td>
+            <td><span class="status status-ok">Done</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" aria-label="Select snapshot 0e6d7c3"></td>
+            <td>0e6d7c3</td>
+            <td>Nov 7, 2026, 10:15 AM</td>
+            <td>3,398</td>
+            <td>76.1 MB</td>
+            <td>76.1 MB</td>
+            <td>2m 7s</td>
+            <td><span class="status status-ok">Done</span></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <button class="button" type="button" disabled>Restore selected</button>
+    </section>
+
+    <section>
+      <h2>Danger zone</h2>
+      <p>Deleting the repository removes every snapshot. This cannot be undone.</p>
+      <button class="button button-danger" type="button">Delete repository</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Stashling is free software under the MIT license. Built by volunteers since 2021.</p>
+  </footer>
+</body>
+</html>

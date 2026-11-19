@@ -1,0 +1,145 @@
+self-check passed: ratio() agrees with colorjs.io 0.7.1 WCAG21 within 0.002
+
+## A. Scales (blue: C 0.161 H 248.4; red: C 0.2 H 27; neutral: C 0), CSS gamut mapping to sRGB
+-- blue
+blue-50   target L 0.97  #e3f8ff  oklch(0.966 0.024 219.7)  vs white 1.10  vs neutral-950 14.50
+blue-100  target L 0.93  #cbecff  oklch(0.925 0.043 233.2)  vs white 1.24  vs neutral-950 12.87
+blue-200  target L 0.87  #a6daff  oklch(0.865 0.075 239.7)  vs white 1.49  vs neutral-950 10.68
+blue-300  target L 0.80  #77c4ff  oklch(0.793 0.114 243.0)  vs white 1.89  vs neutral-950 8.43
+blue-400  target L 0.72  #43aaff  oklch(0.717 0.156 247.3)  vs white 2.49  vs neutral-950 6.39
+blue-500  target L 0.64  #2291e8  oklch(0.641 0.161 248.2)  vs white 3.34  vs neutral-950 4.76
+blue-600  target L 0.56  #0078cd  oklch(0.563 0.158 249.6)  vs white 4.60  vs neutral-950 3.46
+blue-700  target L 0.48  #005fb2  oklch(0.487 0.152 253.3)  vs white 6.40  vs neutral-950 2.48
+blue-800  target L 0.40  #004890  oklch(0.408 0.134 255.0)  vs white 9.01  vs neutral-950 1.77
+blue-900  target L 0.32  #00336d  oklch(0.329 0.113 256.1)  vs white 12.39  vs neutral-950 1.28
+blue-950  target L 0.25  #00214f  oklch(0.258 0.093 257.4)  vs white 15.78  vs neutral-950 1.01
+-- red
+red-50   target L 0.97  #ffece8  oklch(0.957 0.021 31.8)  vs white 1.14  vs neutral-950 13.95
+red-100  target L 0.93  #ffdad3  oklch(0.917 0.043 30.5)  vs white 1.29  vs neutral-950 12.29
+red-200  target L 0.87  #ffbdb4  oklch(0.856 0.078 27.6)  vs white 1.59  vs neutral-950 9.99
+red-300  target L 0.80  #ff998d  oklch(0.786 0.124 27.4)  vs white 2.06  vs neutral-950 7.72
+red-400  target L 0.72  #ff675c  oklch(0.704 0.188 27.1)  vs white 2.86  vs neutral-950 5.57
+red-500  target L 0.64  #ed4b43  oklch(0.640 0.200 27.2)  vs white 3.69  vs neutral-950 4.31
+red-600  target L 0.56  #d02c2a  oklch(0.560 0.200 27.1)  vs white 5.15  vs neutral-950 3.09
+red-700  target L 0.48  #b3000d  oklch(0.482 0.197 27.6)  vs white 7.19  vs neutral-950 2.21
+red-800  target L 0.40  #910000  oklch(0.412 0.169 29.2)  vs white 9.53  vs neutral-950 1.67
+red-900  target L 0.32  #6c0000  oklch(0.334 0.137 29.2)  vs white 12.82  vs neutral-950 1.24
+red-950  target L 0.25  #4d0000  oklch(0.264 0.108 29.2)  vs white 15.96  vs neutral-950 1.00
+-- neutral
+neutral-0    target L 1.00  #ffffff  oklch(1.000 0.000 0.0)  vs white 1.00  vs neutral-950 15.91
+neutral-50   target L 0.97  #f5f5f5  oklch(0.970 0.000 0.0)  vs white 1.09  vs neutral-950 14.59
+neutral-100  target L 0.93  #e8e8e8  oklch(0.931 0.000 0.0)  vs white 1.23  vs neutral-950 12.98
+neutral-200  target L 0.87  #d4d4d4  oklch(0.870 0.000 0.0)  vs white 1.48  vs neutral-950 10.73
+neutral-300  target L 0.80  #bebebe  oklch(0.802 0.000 0.0)  vs white 1.86  vs neutral-950 8.56
+neutral-400  target L 0.72  #a4a4a4  oklch(0.719 0.000 0.0)  vs white 2.49  vs neutral-950 6.38
+neutral-500  target L 0.64  #8c8c8c  oklch(0.640 0.000 0.0)  vs white 3.36  vs neutral-950 4.73
+neutral-600  target L 0.56  #747474  oklch(0.559 0.000 0.0)  vs white 4.67  vs neutral-950 3.40
+neutral-700  target L 0.48  #5d5d5d  oklch(0.478 0.000 0.0)  vs white 6.58  vs neutral-950 2.42
+neutral-800  target L 0.40  #484848  oklch(0.402 0.000 0.0)  vs white 9.15  vs neutral-950 1.74
+neutral-900  target L 0.32  #333333  oklch(0.321 0.000 0.0)  vs white 12.63  vs neutral-950 1.26
+neutral-950  target L 0.25  #222222  oklch(0.252 0.000 0.0)  vs white 15.91  vs neutral-950 1.00
+
+## B. The opening button and its two fixes
+before: white on brand                   #ffffff on #3ea6ff: 2.59:1  Lc -55.3
+fix A: neutral-950 text on brand         #222222 on #3ea6ff: 6.14:1  Lc 50.6
+fix B: white on blue-600                 #ffffff on #0078cd: 4.60:1  Lc -76.7
+before: white on #ff0000 (danger)        #ffffff on #ff0000: 4.00:1  Lc -69.6
+after: white on red-600                  #ffffff on #d02c2a: 5.15:1  Lc -79.3
+18pt = 24px, 14pt = 18.67px
+
+## C. light theme pairs
+text on surface                          #222222 on #ffffff: 15.91:1  Lc 102.9
+text on surface-alt                      #222222 on #e8e8e8: 12.98:1  Lc 89.3
+muted on surface                         #5d5d5d on #ffffff: 6.58:1  Lc 82.6
+on-bar on bar                            #ffffff on #222222: 15.91:1  Lc -105.5
+border on surface                        #bebebe on #ffffff: 1.86:1  Lc 35.1
+on-accent on accent                      #ffffff on #0078cd: 4.60:1  Lc -76.7
+accent hover color-mix(in oklab, #0078cd, black 15%) -> #005fa5 oklch(0.478 0.135 249.9)
+on-accent on accent hover                #ffffff on #005fa5: 6.60:1  Lc -87.1
+on-danger on danger                      #ffffff on #d02c2a: 5.15:1  Lc -79.3
+danger hover color-mix(in oklab, #d02c2a, black 15%) -> #a72120 oklch(0.475 0.170 26.9)
+on-danger on danger hover                #ffffff on #a72120: 7.29:1  Lc -88.7
+accent fill against surface              #0078cd on #ffffff: 4.60:1  Lc 71.2
+danger fill against surface              #d02c2a on #ffffff: 5.15:1  Lc 73.8
+bar against surface                      #222222 on #ffffff: 15.91:1  Lc 102.9
+on-status (neutral-950) on ok            #222222 on #71c575: 7.53:1  Lc 59.6
+ok label against surface                 #71c575 on #ffffff: 2.11:1  Lc 41.2
+on-status (neutral-950) on running       #222222 on #d6a62e: 7.09:1  Lc 56.7
+running label against surface            #d6a62e on #ffffff: 2.25:1  Lc 44.1
+on-status (neutral-950) on failed        #222222 on #fa8978: 6.75:1  Lc 54.8
+failed label against surface             #fa8978 on #ffffff: 2.36:1  Lc 46.1
+
+## D. dark theme pairs
+text on surface                          #e8e8e8 on #222222: 12.98:1  Lc -90.5
+text on Material 2's #121212             #e8e8e8 on #121212: 15.29:1  Lc -92.3
+text on surface-alt                      #e8e8e8 on #333333: 10.31:1  Lc -87.1
+muted on surface                         #a4a4a4 on #222222: 6.38:1  Lc -50.6
+on-bar on bar                            #e8e8e8 on #333333: 10.31:1  Lc -87.1
+border on surface                        #5d5d5d on #222222: 2.42:1  Lc -16.9
+on-accent on accent                      #222222 on #77c4ff: 8.43:1  Lc 65.0
+accent hover color-mix(in oklab, #77c4ff, black 15%) -> #5f9dce oklch(0.674 0.097 243.8)
+on-accent on accent hover                #222222 on #5f9dce: 5.46:1  Lc 45.5
+on-danger on danger                      #222222 on #ff998d: 7.72:1  Lc 60.9
+danger hover color-mix(in oklab, #ff998d, black 15%) -> #ce7a70 oklch(0.668 0.107 27.5)
+on-danger on danger hover                #222222 on #ce7a70: 5.03:1  Lc 42.4
+accent fill against surface              #77c4ff on #222222: 8.43:1  Lc -64.4
+danger fill against surface              #ff998d on #222222: 7.72:1  Lc -60.0
+bar against surface                      #333333 on #222222: 1.26:1  Lc 0.0
+on-status (neutral-950) on ok            #222222 on #71c575: 7.53:1  Lc 59.6
+ok label against surface                 #71c575 on #222222: 7.53:1  Lc -58.6
+on-status (neutral-950) on running       #222222 on #d6a62e: 7.09:1  Lc 56.7
+running label against surface            #d6a62e on #222222: 7.09:1  Lc -55.7
+on-status (neutral-950) on failed        #222222 on #fa8978: 6.75:1  Lc 54.8
+failed label against surface             #fa8978 on #222222: 6.75:1  Lc -53.6
+
+## E. Dark theme the naive way: only surface and text swapped
+light muted (neutral-700) on dark surface #5d5d5d on #222222: 2.42:1  Lc -16.9
+light bar (neutral-950) on dark surface  #222222 on #222222: 1.00:1  Lc 0.0
+light border (neutral-300) on dark surface #bebebe on #222222: 8.56:1  Lc -65.0
+blue-600 as text or fill on dark surface #0078cd on #222222: 3.46:1  Lc -28.0
+red-600 as text or fill on dark surface  #d02c2a on #222222: 3.09:1  Lc -25.4
+
+## F. Same lightness gap, light end and dark end (from the scales)
+text: neutral-950 on neutral-0 (gap 0.75) #222222 on #ffffff: 15.91:1  Lc 102.9
+text: neutral-100 on neutral-950 (gap 0.68) #e8e8e8 on #222222: 12.98:1  Lc -90.5
+muted: neutral-700 on neutral-0 (gap 0.52) #5d5d5d on #ffffff: 6.58:1  Lc 82.6
+mirror of it: neutral-300 on neutral-950 (gap 0.55) #bebebe on #222222: 8.56:1  Lc -65.0
+chosen: neutral-400 on neutral-950 (gap 0.47) #a4a4a4 on #222222: 6.38:1  Lc -50.6
+gray L 1.0 #ffffff vs L 0.8 #bebebe: 1.86:1
+gray L 0.8 #bebebe vs L 0.6 #808080: 2.12:1
+gray L 0.4 #484848 vs L 0.2 #161616: 1.98:1
+gray L 0.3 #2e2e2e vs L 0.1 #030303: 1.52:1
+
+## G. Color vision deficiency (culori filterDeficiency*, severity 1)
+ok        #71c575  deuteranopia #b8aa78  protanopia #c9b371  tritanopia #6ac0ac
+running   #d6a62e  deuteranopia #d3ae31  protanopia #c6a028  tritanopia #f89182
+failed    #fa8978  deuteranopia #b6a877  protanopia #9e9477  tritanopia #ff7e84
+blue-600  #0078cd  deuteranopia #395acc  protanopia #5473d2  tritanopia #008e91
+red-600   #d02c2a  deuteranopia #695a28  protanopia #453f29  tritanopia #fa1f2c
+ok vs failed: deltaEOK 0.237, under deuteranopia 0.006; WCAG between them 1.12:1
+
+## H. contrast-color() figure: WCAG and APCA for white and black text
+#3ea6ff: white 2.59:1 Lc -55.3; black 8.10:1 Lc 53.8
+#0078cd: white 4.60:1 Lc -76.7; black 4.57:1 Lc 32.9
+#2277d3: white 4.52:1 Lc -76.3; black 4.65:1 Lc 33.2
+
+## I. APCA vs WCAG examples
+black on brand                           #000000 on #3ea6ff: 8.10:1  Lc 53.8
+#767676 on white                         #767676 on #ffffff: 4.54:1  Lc 71.6
+#777777 on white                         #777777 on #ffffff: 4.48:1  Lc 71.1
+white on neutral-950                     #ffffff on #222222: 15.91:1  Lc -105.5
+neutral-950 on white                     #222222 on #ffffff: 15.91:1  Lc 102.9
+
+## J. Critique: a link on a dark card
+link #0078cd on card #1e1e1e             #0078cd on #1e1e1e: 3.63:1  Lc -28.6
+fix: blue-300 on card #1e1e1e            #77c4ff on #1e1e1e: 8.83:1  Lc -65.0
+same link on white                       #0078cd on #ffffff: 4.60:1  Lc 71.2
+
+## K. Clipping vs gamut mapping for two blue steps
+oklch(0.56 0.161 248.4): clipped #0078cd, mapped #0078cd
+oklch(0.8 0.161 248.4): clipped #5fc4ff, mapped #77c4ff
+
+## L. CIELAB L* gaps over gray pairs (Material's tone is L*): smallest WCAG ratio
+L* gap 40: at least 3.15:1 (smallest at L* 100.0 vs 60.0)
+L* gap 50: at least 4.48:1 (smallest at L* 99.9 vs 49.9)
+L* gap 60: at least 6.43:1 (smallest at L* 99.7 vs 39.7)
